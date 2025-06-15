@@ -1,0 +1,305 @@
+
+
+
+/* Animações (Keyframes) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação do Sidebar (pode sobrescrever o @keyframes slideInLeft anterior) */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* Estilos de Transição e Animação */
+
+/* Header */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Hero Section */
+.hero-section h1 {
+    animation: fadeInUp 1s ease;
+}
+
+.hero-section p {
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-section .d-flex {
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+/* Botões */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Seção de Estatísticas */
+.stat-item {
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    animation: pulse 2s infinite;
+}
+
+/* Cards */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Formulários */
+.form-control, .form-select {
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    transform: translateY(-1px);
+}
+
+/* Botões de Filtro */
+.filter-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    transform: scale(1.05);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Timeline */
+.timeline-item {
+    transition: all 0.3s ease;
+    animation: slideInLeft 0.6s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+/* Itens de Destaque (Feature) */
+.feature-item {
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item i {
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover i {
+    animation: pulse 1s ease;
+}
+
+/* Animação de Carregamento */
+.loading {
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Mensagem de Sucesso */
+.alert-success {
+    animation: slideInDown 0.5s ease;
+}
+
+/* Efeitos em Ícones */
+.bi {
+    transition: all 0.3s ease;
+}
+
+.hero-section .bi:hover {
+    animation: pulse 1s ease;
+}
+
+/* Sidebar (Offcanvas) */
+.offcanvas.show {
+    animation: slideInLeft 0.3s ease;
+}
+
+.offcanvas-backdrop {
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-section {
+    animation: fadeInUp 0.5s ease;
+}
+
+.sidebar-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.sidebar-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.sidebar-section:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.sidebar-section:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.sidebar-link {
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+    transform: translateX(5px);
+}
+
+.filter-sidebar-btn {
+    transition: all 0.3s ease;
+}
+
+.filter-sidebar-btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-section .card {
+    transition: all 0.3s ease;
+}
+
+.sidebar-section .card:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar-section .btn-sm {
+    transition: all 0.3s ease;
+}
+
+.sidebar-section .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar-section .btn-outline-secondary:hover,
+.sidebar-section .btn-outline-info:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar-link::before {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-link:hover::before {
+    transform: scaleY(1);
+}
+
+.sidebar-link i,
+.filter-sidebar-btn i {
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover i,
+.filter-sidebar-btn:hover i {
+    transform: scale(1.1);
+}

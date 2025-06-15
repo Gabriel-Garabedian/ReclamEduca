@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReclamEduca</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- =========================
+     Barra de navegação
+========================= -->
+    
+    <header class="bg-primary text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <!-- Botão para abrir o menu lateral -->
+                <button class="btn btn-outline-light me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                 <!-- Logo e nome do site -->
+                <a class="navbar-brand fw-bold" href="#">
+                    ReclamEduca
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Links do menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reclamar">Fazer Reclamação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#timeline">Timeline</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- =========================
+     Menu lateral (sidebar)
+========================= -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header bg-primary text-white">
+            <h5 class="offcanvas-title" id="sidebarLabel">
+                Menu Principal
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Navegação rápida -->
+            <div class="sidebar-section">
+                <h6 class="sidebar-heading text-muted text-uppercase fw-bold mb-3">
+                    Navegação
+                </h6>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="#home" data-bs-dismiss="offcanvas">
+                            Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="#reclamar" data-bs-dismiss="offcanvas">
+                            Fazer Reclamação
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="#timeline" data-bs-dismiss="offcanvas">
+                            Timeline
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" href="#sobre" data-bs-dismiss="offcanvas">
+                            Sobre
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="my-4">
+            <!-- Filtros rápidos -->
+            <div class="sidebar-section">
+                <h6 class="sidebar-heading text-muted text-uppercase fw-bold mb-3">
+                    Filtros Rápidos
+                </h6>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-primary btn-sm filter-sidebar-btn" data-filter="all" data-bs-dismiss="offcanvas">
+                        Todas as Reclamações
+                    </button>
+                    <button class="btn btn-outline-warning btn-sm filter-sidebar-btn" data-filter="infraestrutura" data-bs-dismiss="offcanvas">
+                        Infraestrutura
+                    </button>
+                    <button class="btn btn-outline-success btn-sm filter-sidebar-btn" data-filter="social" data-bs-dismiss="offcanvas">
+                        Social
+                    </button>
+                    <button class="btn btn-outline-info btn-sm filter-sidebar-btn" data-filter="ensino" data-bs-dismiss="offcanvas">
+                        Ensino
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm filter-sidebar-btn" data-filter="alimentacao" data-bs-dismiss="offcanvas">
+                        Alimentação
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm filter-sidebar-btn" data-filter="seguranca" data-bs-dismiss="offcanvas">
+                        Segurança
+                    </button>
+                    <button class="btn btn-outline-dark btn-sm filter-sidebar-btn" data-filter="transporte" data-bs-dismiss="offcanvas">
+                        Transporte
+                    </button>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <!-- Rodapé do menu lateral -->
+            <div class="mt-auto pt-4">
+                <div class="text-center">
+                    <small class="text-muted">
+                        Feito para melhorar a educação
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- =========================
+     Seção principal
+========================= -->
+    <section id="home" class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-primary mb-4">
+                        Sua voz importa na educação do Recife!
+                    </h1>
+                    <p class="lead mb-4">
+                        Plataforma dedicada para que estudantes, pais e responsáveis possam relatar problemas 
+                        e sugerir melhorias nas escolas da cidade do Recife. Juntos, construímos uma educação melhor.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#reclamar" class="btn btn-primary btn-lg">
+                            Fazer Reclamação
+                        </a>
+                        <a href="#timeline" class="btn btn-outline-primary btn-lg">
+                            Ver Timeline
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- =========================
+     Formulário de reclamação
+========================= -->
+    <section id="reclamar" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">
+                            Fazer uma Reclamação
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{{ url_for('pagina_principal') }}">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="school-name" class="form-label">Nome da Escola</label>
+                                    <input type="text" class="form-control" id="school-name" name="nome_escola" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="complaint-category" class="form-label">Categoria</label>
+                                    <select class="form-select" id="complaint-category" name="categoria" required>
+                                        <option value="">Selecione uma categoria</option>
+                                        <option value="infraestrutura">Infraestrutura</option>
+                                        <option value="social">Questões Sociais</option>
+                                        <option value="ensino">Qualidade do Ensino</option>
+                                        <option value="alimentacao">Alimentação Escolar</option>
+                                        <option value="seguranca">Segurança</option>
+                                        <option value="transporte">Transporte Escolar</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="complaint-title" class="form-label">Título da Reclamação</label>
+                                <input type="text" class="form-control" id="complaint-title" name="titulo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="complaint-description" class="form-label">Descrição Detalhada</label>
+                                <textarea class="form-control" id="complaint-description" name="descricao" rows="4" required></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="complainant-name" class="form-label">Seu Nome (opcional)</label>
+                                    <input type="text" class="form-control" id="complainant-name" name="nome_reclamante">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="complainant-role" class="form-label">Você é:</label>
+                                    <select class="form-select" id="complainant-role" name="papel">
+                                        <option value="estudante">Estudante</option>
+                                        <option value="pai">Pai/Mãe</option>
+                                        <option value="responsavel">Responsável</option>
+                                        <option value="professor">Professor</option>
+                                        <option value="funcionario">Funcionário</option>
+                                        <option value="comunidade">Membro da Comunidade</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="complaint-date" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="complaint-date" name="data" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Enviar Reclamação
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================
+     Timeline das reclamações
+========================= -->
+    <section id="timeline" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-5">
+                    Timeline de Reclamações
+                </h2>
+            </div>
+        </div>
+        <div id="timeline-container">
+            {% if reclamacoes %}
+                {% for reclamacao in reclamacoes %}
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <strong>{{ reclamacao.titulo }}</strong> - {{ reclamacao.nome_escola }}
+                        <span class="badge bg-secondary float-end">{{ reclamacao.categoria }}</span>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ reclamacao.descricao }}</p>
+                        <small>
+                            <b>Por:</b> {{ reclamacao.nome_reclamante or "Anônimo" }} |
+                            <b>Papel:</b> {{ reclamacao.papel }} |
+                            <b>Data:</b> {{ reclamacao.data.strftime('%d/%m/%Y') }}
+                        </small>
+                        <!-- Botões de editar e deletar -->
+                        <div class="mt-2">
+                            <a href="{{ url_for('editar_reclamacao', id=reclamacao.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            <form method="post" action="{{ url_for('deletar_reclamacao', id=reclamacao.id) }}" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar?');">
+                                <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="text-center py-5">
+                    <p class="text-muted mt-3">Nenhuma reclamação ainda. Seja o primeiro a relatar um problema!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- =========================
+     Filtros de timeline 
+========================= -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <button class="btn btn-outline-primary filter-btn active" data-filter="all">
+                        Todas
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="infraestrutura">
+                        Infraestrutura
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="social">
+                        Social
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="ensino">
+                        Ensino
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="alimentacao">
+                        Alimentação
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="seguranca">
+                        Segurança
+                    </button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="transporte">
+                        Transporte
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {% if aluno %}
+    <form method="post" action="{{ url_for('add_reclamacao', aluno_id=aluno.id) }}">
+        </form>
+            <div id="timeline-container">
+    
+    {% if reclamacoes %}
+        {% for reclamacao in reclamacoes %}
+        <div class="card mb-3">
+            <div class="card-header">
+                <strong>{{ reclamacao.titulo }}</strong> - {{ reclamacao.nome_escola }}
+                <span class="badge bg-secondary float-end">{{ reclamacao.categoria }}</span>
+            </div>
+            <div class="card-body">
+                <p>{{ reclamacao.descricao }}</p>
+                <small>
+                    <b>Por:</b> {{ reclamacao.nome_reclamante or "Anônimo" }} |
+                    <b>Papel:</b> {{ reclamacao.papel }} |
+                    <b>Data:</b> {{ reclamacao.data.strftime('%d/%m/%Y') }}
+                </small>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="text-center py-5">
+            <p class="text-muted mt-3">Nenhuma reclamação ainda. Seja o primeiro a relatar um problema!</p>
+        </div>
+    {% endif %}
+</div>
+{% else %}
+    <div class="alert alert-warning mt-4">
+        </div>
+{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =========================
+     Seção sobre o projeto
+========================= -->
+
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Sobre o Projeto</h2>
+                    <p class="lead">
+                        O "Reclama Aqui - Escolas Recife" é uma plataforma cidadã que visa melhorar a qualidade 
+                        da educação pública e privada na cidade do Recife através da transparência e participação 
+                        da comunidade escolar.
+                    </p>
+                    <p>
+                        Aqui, estudantes, pais, responsáveis e membros da comunidade podem relatar problemas, 
+                        sugerir melhorias e acompanhar o progresso das soluções implementadas nas escolas da cidade.
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-item">
+                        <h4>Transparência</h4>
+                        <p>Todas as reclamações são públicas e podem ser acompanhadas pela comunidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-item">
+                        <h4>Participação</h4>
+                        <p>Qualquer pessoa pode contribuir relatando problemas ou sugerindo soluções.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-item">
+                        <h4>Melhoria Contínua</h4>
+                        <p>Acompanhe o progresso e veja como sua voz faz a diferença na educação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- =========================
+     Rodapé
+========================= -->
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>ReclamEduca - Escolas Recife</h5>
+                    <p class="mb-0">Construindo uma educação melhor através da participação cidadã.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">
+                        ReclamEduca@gmail.com
+                    </p>
+                    <p class="mb-0">
+                        (81) 0002-8922
+                    </p>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 ReclamEduca - Escolas Recife. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

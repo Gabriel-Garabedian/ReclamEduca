@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Cadastro</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="/static/js/cadastro.js" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+</head>
+<body>
+  <!-- 🔥 Aqui está o que faltava -->
+  <div class="cadastro-container">
+    <div class="cadastro-box">
+      <h2>Cadastro</h2>
+      <form method="post">
+          Usuário: <input type="text" name="username" required><br>
+          Senha: <input type="password" name="senha" required><br>
+          <button type="submit">Cadastrar</button>
+      </form>
+      <a href="{{ url_for('login') }}">Já tem conta? Faça login</a>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</body>
+</html>
